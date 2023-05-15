@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+    <head>
+        <!-- Primary Meta Tags -->
+        <title>aizakku Companion</title>
+        <!-- <meta name="title" content="aizakku Companion">
+        <meta name="description" content="Login to aizakku.dev">
+        <meta name="robots" content="index"/> -->
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+        <!-- Open Graph / Facebook -->
+        <!-- <meta property="og:type" content="website">
+        <meta property="og:url" content="https://c.aizakku.dev/">
+        <meta property="og:title" content="aizakku Companion">
+        <meta property="og:description" content="Web app for remote login"> -->
+
+        <!-- Twitter -->
+        <!-- <meta property="twitter:url" content="https://c.aizakku.dev/">
+        <meta property="twitter:title" content="aizakku Companion">
+        <meta property="twitter:description" content="Web app for remote login"> -->
+
+        <link rel="stylesheet" href="./static/style.css">
+    
+        <script src="./static/app.js" type="module"></script>
+
+        <script>
+            // https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
+            let vh = window.innerHeight * 0.01;
+
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        </script>
+    </head>
+    <body>
+        <main id="client-container" class="modal">
+            <h2>Active Clients</h2>
+            <hr>
+            <!-- <div class="padded">
+                <span class="green circle"></span>
+                <p class="client-ip">127.0.0.1</p>
+                <button>Request</button>
+            </div>
+            <div class="padded">
+                <span class="green circle"></span>
+                <p class="client-ip">76.231.83.202</p>
+                <button>Request</button>
+            </div>
+            <div class="padded">
+                <span class="red circle"></span>
+                <p class="client-ip">161.97.105.186</p>
+            </div> -->
+        </main>
+
+        <div id="overlay" class="overlay">
+            <div id="wait-prompt" class="prompt modal">
+                <h2>Waiting for authorization</h2>
+                <hr>
+                <p id="wait-message" class="padded"></p>
+                <button id="wait-exit-button">Exit</button>
+            </div>
+
+            <div id="request-prompt" class="prompt modal">
+                <h2>New message request</h2>
+                <hr>
+                <p id="request-message" class="padded"></p>
+                <button id="accept-button">Accept</button>
+                <button class="r-space" id="decline-button">Decline</button>
+            </div>
+
+            <div id="message-container">
+                <div class="header">
+                    <p id="client-message-id">Client</p>
+                    <button id="message-exit-button">Exit</button>
+                </div>
+                <div id="messages-container">
+
+                </div>
+                <div class="input-container">
+                    <input id="message-input" type="text" placeholder="Message" autofocus>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
